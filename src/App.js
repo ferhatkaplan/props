@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import tweet from './tweet.js';
+import Tweet from './tweet.js'
 
 function App() {
+
+  const Tweets = [{ name:"ferhat", message:"Hi, Im Ferhat"},
+  { name:"Natalia", message:"Hello react"},
+  { name:"Alice", message:"How Are You?"}]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {Tweets.map((tweet)=>(
+        <Tweet firstname={tweet.name} message={tweet.message}/>
+      )
+
+      )}
     </div>
   );
 }
